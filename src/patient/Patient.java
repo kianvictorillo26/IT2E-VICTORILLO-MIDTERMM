@@ -75,45 +75,43 @@ public class Patient {
      
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner (System.in);
         
-        System.out.println("1. ADD");
-        System.out.println("2. VIEW");
-        System.out.println("3. UPDATE");
-        System.out.println("4. DELETE");
-        System.out.println("5. EXIT");
-        
-        
-        System.out.print(" Enter action: ");
-        int action = sc.nextInt();
-          Patient test = new   Patient();
-        switch(action){
-            case 1:
-                 test.addCustomer();
-                 
-                 break;
-                 
-                 
-            case 2:
-                test.viewCustomers();
-                
-                
-            break;
-            
-            
-            case 3:
-                 test.viewCustomers();
-                test.updateCustomer();
-                
-                
-            break;
-           
-            case 4:
-                  test.viewCustomers();
-                test.deleteCustomer();
-                
+        Scanner sc = new Scanner(System.in);
+        String resp;
+        do{
+
+            System.out.println("1. ADD");
+            System.out.println("2. VIEW");
+            System.out.println("3. UPDATE");
+            System.out.println("4. DELETE");
+            System.out.println("5. EXIT");
+
+            System.out.print("Enter Action: ");
+            int action = sc.nextInt();
+            Patient test = new Patient();
+            switch(action){
+                case 1:
+                    test.addCustomer();
                 break;
-                
+                case 2:
+                    test.viewCustomers();
+                break;
+                case 3:
+                    test.viewCustomers();
+                    test.updateCustomer();
+                break;
+                case 4:
+                    test.viewCustomers();
+                    test.deleteCustomer();
+                    test.viewCustomers();
+                break;
+            }
+            
+            System.out.print("Continue? ");
+            resp = sc.next();
+
+        }while(resp.equalsIgnoreCase("yes"));
+            System.out.println("Thank You!");
                 
             
             
@@ -121,4 +119,4 @@ public class Patient {
     }
     
     
-}
+
